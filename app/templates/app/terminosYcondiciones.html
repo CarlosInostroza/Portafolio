@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/fb6df8181f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Términos y Condiciones</title>
+</head>
+<body >
+  <header >
+      <!-- =========================================================== -->
+      <!-- ========== Menu  ================= -->
+      <!-- =========================================================== -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 bg-main" id="menu"  >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"> 
+              <img src="{% static 'app/img/logo_1_dark.png' %}" style="width: 45px;">
+              <span class="text-primary fs-5 fw-bold">TecSecurity</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{% url 'sobreNosotros' %}">Sobre Nosotros</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+<div class="container">
+    <h1 class="text-primary"><i class="fa-solid fa-book"></i> Términos y Condiciones</h1>
+    <span class="form-control" rows="20" style="resize: none;">
+      <p>1. Pagos:</p>
+      <p>
+        1.1. Todos los pagos se realizarán mensualmente y deberán efectuarse antes del primer día de cada mes.</p>
+      <p>      1.2. El usuario es responsable de garantizar que los detalles de pago proporcionados sean precisos y estén actualizados. En caso de cualquier cambio en la información de pago, el usuario deberá actualizarla de inmediato.
+      </p>
+      <p>      1.3. La falta de pago antes del primer día de cada mes puede resultar en la suspensión o terminación del acceso a los servicios.
+      </p>
+      <p>2. Devoluciones:</p>
+      <p>
+        2.1. No se aceptarán devoluciones de pagos realizados. Todos los pagos son no reembolsables.</p>
+      <P>3. Problemas Internos de la Aplicación:</P>
+      <p>
+        3.1. En caso de cualquier problema interno con la aplicación, el usuario debe comunicarse con nuestro equipo de asistencia técnica.</p>
+      
+      <P>      3.2. El usuario puede encontrar información de contacto para el equipo de asistencia en la página web. Se recomienda llamar al número indicado para obtener asistencia inmediata.
+      </P>
+      <P>      3.3. El equipo de asistencia se esforzará por resolver cualquier problema técnico de manera oportuna, pero no se garantiza la resolución inmediata en todos los casos.
+      </P>
+      <P>      4. Responsabilidad del Usuario:
+      </P>
+      <P>      4.1. El usuario es responsable de mantener la confidencialidad de su información de inicio de sesión y de cualquier actividad que ocurra en su cuenta.
+      </P>
+      <P>      4.2. El usuario acepta notificar de inmediato cualquier uso no autorizado de su cuenta o cualquier otra violación de seguridad.
+      </P>
+      <P>      5. Modificaciones en los Términos y Condiciones:
+      </P>
+      <P>      5.1. Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Los cambios entrarán en vigencia inmediatamente después de la publicación en la página web.
+      </P>
+      <P>      5.2. Se recomienda revisar regularmente los términos y condiciones para estar al tanto de cualquier actualización.
+      </P>
+      <P>      Al utilizar nuestros servicios, el usuario acepta estos términos y condiciones. Si no está de acuerdo con alguno de los términos, le pedimos que deje de utilizar nuestros servicios de inmediato.
+      </P>
+      
+      
+      
+      
+      
+    </span>    
+</div>
+
+
+    <!-- =========================================================== -->
+        <!-- ========== Footer  ================= -->
+        <!-- =========================================================== -->
+        <footer class="text-center text-lg-start bg-light text-muted pt-2 mt-3">
+
+          <!-- Section: redes sociales -->
+          
+          <!-- Section: reedes-->
+        
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3 text-secondary"></i>TecSecurity
+                  </h6>
+                  <p>
+                    ¡Confía en TecSecurity para proteger lo que más importa: tu entorno laboral, tu equipo y tu éxito!
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Links
+                  </h6>
+                    <a href="{% url 'sobreNosotros' %}" class="text-reset">Sobre Nosotros</a>
+                  </p>
+                  <p>
+                    <a href="{% url 'terminosYcondiciones' %}" class="text-reset">TYC</a>
+                  </p>
+                  
+                 
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                  <p><i class="fas fa-home me-3 text-secondary"></i> Santiago, Las Condes 10012, Chile</p>
+                  <p>
+                    <i class="fas fa-envelope me-3 text-secondary"></i>
+                    TecSecurity@hotmail.com
+                  </p>
+                  <p><i class="fas fa-phone me-3 text-secondary"></i> + 562 56731864</p>
+                  <p><i class="fab fa-facebook-f me-4 text-secondary "></i>Facebook</p>
+                  <p><i class="fab fa-twitter me-3 text-secondary"></i>Twitter</p>
+                  <p><i class="fab fa-instagram me-3 text-secondary"></i>Instagram</p>
+                  <p><i class="fab fa-linkedin me-3 text-secondary"></i>Linkedin</p>
+                  
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+        
+        </footer>
+          <!-- Footer -->
+          </body>
+          
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+          </html>
+          

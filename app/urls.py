@@ -1,0 +1,35 @@
+from django.urls import path, include
+from .views import *
+
+
+urlpatterns = [
+    path('', index, name="index"),
+    path('login/', login, name="login"),
+    path('register/', register, name="register"),
+    path('cliente/', cliente, name="cliente"),
+    path('firmaContrato/', firmaContrato, name="firmaContrato"),
+    path('pago/', pago, name="pago"),
+    path('pago2/', pago2, name="pago2"),
+    path('pagoRealizado/', pagoRealizado, name="pagoRealizado"),
+    path('planPersonalizado/', planPersonalizado, name="planPersonalizado"),
+    path('solicitarServicio/', solicitarServicio, name="solicitarServicio"),
+    path('test/', test, name="test"),
+    path('perfil/', perfil, name="perfil"),
+    path('contrato/', contrato, name="contrato"),
+    path('cerrar_sesion', cerrar_sesion, name="cerrar_sesion"),
+    path('accidente/', accidente, name="accidente"),
+    path('envioAccidente/', envioAccidente, name="envioAccidente"),
+    path('verCapacitacion/', verCapacitacion, name="verCapacitacion"),
+    path('vistaAccidente/', vistaAccidente, name="vistaAccidente"),
+    path('cerrar_sesion', cerrar_sesion, name="cerrar_sesion"),
+    path('capacitaciones/', capacitaciones, name="capacitaciones"),
+    path('plan/', plan, name="plan"),
+    path('extraCapacitacion/', extraCapacitacion, name="extraCapacitacion"),
+    path('extraAsesoria/', extraAsesoria, name="extraAsesoria"),
+    path('extraVisita/', extraVisita, name="extraVisita"),
+    path('resetear_datos/', resetear_datos, name="resetear_datos"),
+    path('servicios/', servicios, name="servicios"),
+    path('sobreNosotros/', sobreNosotros, name="sobreNosotros"),
+    path('terminosYcondiciones/', terminosYcondiciones, name="terminosYcondiciones"),
+    path('listarExtra/', listarExtra, name="listarExtra"),
+]

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/fb6df8181f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AViJiT0gtJktupyhCTjNPKNAr2BqqoXkYOhyGYSbzuDsAzywFwPo1LKd6UHDMTc1hPd3x4qqju3_2AgO&currency=USD"></script>
+    <title>Pago Extra</title>
+</head>
+<body class="bgstandar">
+
+<div class="container border border-dark rounded mt-5 p-2 bg-white">
+    <h1>Pago Mensualidad</h1>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form id="paymentForm" action="{% url 'pago2' %}" method="post">
+        {% csrf_token %}
+        <div class="form-outline">
+            <label class="form-label"><h3>Monto</h3></label>
+            <input type="number" id="form6Example1" value="{{ monto }}" class="form-control" readonly/>
+        </div>
+        <div class="form-outline">
+            <label class="form-label"><h3>Tipo Pago</h3></label>
+            <select name="tipoPago" class="select">
+                <option value="1">Paypal</option>
+            </select>
+        </div>
+        <div class="row mt-3">
+            <!-- Botón de PayPal -->
+            <div id="paypal-button-container"></div>
+        </div>
+    </form>
+
+    <script>
+        paypal.Button.render({
+            env: 'sandbox',
+            client: {
+                sandbox: 'AViJiT0gtJktupyhCTjNPKNAr2BqqoXkYOhyGYSbzuDsAzywFwPo1LKd6UHDMTc1hPd3x4qqju3_2AgO',
+                production: 'demo_production_client_id'
+            },
+            locale: 'es_CL',
+            style: {
+                size: 'small',
+                color: 'black',
+                shape: 'rect',
+            },
+            commit: true,
+            payment: function (data, actions) {
+                return actions.payment.create({
+                    transactions: [{
+                        amount: {
+                            total: '{{ monto }}',
+                            currency: 'USD'
+                        }
+                    }]
+                });
+            },
+            onAuthorize: function (data, actions) {
+              actions.order.capture().then(function(){});
+              document.getElementById('paymentForm').submit();
+            },
+            onCancel: function (data) {
+              alert("Pago cancelado")
+            },
+            onError: function (data) {
+                // ... (resto del código PayPal) ...
+                swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un error en el pago!',
+                    icon: 'error',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Confirmar'
+                });
+            }
+        }, '#paypal-button-container');
+    </script>
+</body>
+</html>

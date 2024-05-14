@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="{% url 'test' %}" >
+    {% csrf_token %}
+    <input type="text" name="rut" placeholder="rut">
+    <input type="text" name="primer_nombre" placeholder="primer_nombre">
+    <input type="text" name="segundo_nombre" placeholder="segundo_nombre">
+    <input type="text" name="apellido_paterno" placeholder="apellido_paterno">
+    <input type="text" name="apellido_materno" placeholder="apellido_materno">
+    <input type="text" name="telefono" placeholder="telefono">
+    <input type="text" name="direccion" placeholder="direccion">
+    <input type="text" name="correo" placeholder="correo">
+    <input type="text" name="contraseña" placeholder="contraseña">
+    <button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html>
